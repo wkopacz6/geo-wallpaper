@@ -1,0 +1,19 @@
+[project]
+name = "geo-wallpaper"
+version = "0.1.0"
+description = "Generate 3D-triangle wallpapers and rotate them on a schedule (macOS)"
+requires-python = ">=3.11"
+dependencies = [
+    "pillow>=10.0",
+    "rumps>=0.4.0; sys_platform == 'darwin'",
+]
+
+[project.scripts]
+geo-wallpaper = "geo_wallpaper.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/geo_wallpaper"]
